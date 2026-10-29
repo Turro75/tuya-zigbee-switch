@@ -102,7 +102,7 @@ $(TOOLS_DIR)/commander: | $(DOWNLOAD_DIR)
 	@echo "Downloading Simplicity Commander..."
 	@if [ ! -f "$(DOWNLOAD_DIR)/SimplicityCommander-Linux.zip" ]; then \
 		echo "Attempting to download from: $(COMMANDER_URL)"; \
-		if ! curl -L "$(COMMANDER_URL)" \
+		if ! curl -A "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" -L "$(COMMANDER_URL)" \
 			-o "$(DOWNLOAD_DIR)/SimplicityCommander-Linux.zip" \
 			--fail --show-error --connect-timeout 30; then \
 			echo "Download failed. Please manually download SimplicityCommander-Linux.zip"; \
